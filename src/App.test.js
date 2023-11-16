@@ -20,3 +20,58 @@ test("Check Input box", () => {
   expect(checkbox).toHaveAttribute("type", "text");
   expect(checkbox).toHaveAttribute("value", "jeetesh");
 });
+
+describe("UI Testcase group", () => {
+  test("group-1 with describe", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+    expect(checkInput).toHaveAttribute("name", "username");
+    expect(checkInput).toHaveAttribute("value", "jeetesh");
+  });
+  test("group-2 with describe", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+    expect(checkInput).toHaveAttribute("name", "username");
+    expect(checkInput).toHaveAttribute("value", "jeetesh");
+  });
+  test("group-3 with describe", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+    expect(checkInput).toHaveAttribute("name", "username");
+    expect(checkInput).toHaveAttribute("value", "jeetesh");
+  });
+});
+
+describe.only("API Testcase group", () => {
+  test("group-1 with describe", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+    expect(checkInput).toHaveAttribute("name", "username");
+    expect(checkInput).toHaveAttribute("value", "jeetesh");
+  });
+  test("group-2 with describe", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+    expect(checkInput).toHaveAttribute("name", "username");
+    expect(checkInput).toHaveAttribute("value", "jeetesh");
+  });
+  test("group-3 with describe", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toBeInTheDocument();
+    expect(checkInput).toHaveAttribute("name", "username");
+    expect(checkInput).toHaveAttribute("value", "jeetesh");
+  });
+  describe("Inner Describe Group", () => {
+    test("nested with describe", () => {
+      render(<App />);
+      let checkInput = screen.getByRole("textbox");
+      expect(checkInput).toBeInTheDocument();
+    });
+  });
+});
