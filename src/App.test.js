@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 
 // test("TestFirst React case", () => {
@@ -45,7 +45,7 @@ describe("UI Testcase group", () => {
   });
 });
 
-describe.only("API Testcase group", () => {
+describe("API Testcase group", () => {
   test("group-1 with describe", () => {
     render(<App />);
     let checkInput = screen.getByRole("textbox");
@@ -73,5 +73,16 @@ describe.only("API Testcase group", () => {
       let checkInput = screen.getByRole("textbox");
       expect(checkInput).toBeInTheDocument();
     });
+  });
+});
+
+// testing of change event
+
+describe.only("Inout change event testing", () => {
+  test("onchange event Testing", () => {
+    render(<App />);
+    let inputCheck = screen.getByRole("textbox");
+    fireEvent.change(inputCheck, { target: { value: "a" } });
+    expect(inputCheck.value).toBe("a");
   });
 });
