@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState("");
+  const [update, setUpdate] = useState("");
 
   return (
     <div className="App">
@@ -33,6 +34,10 @@ function App() {
         value={data}
         onChange={(e) => setData(e.target.value)}
       />
+      <button type="submit" onClick={() => setUpdate("Updated the data")}>
+        Update
+      </button>
+      <h1>{update}</h1>
     </div>
   );
 }

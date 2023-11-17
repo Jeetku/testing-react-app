@@ -78,11 +78,22 @@ describe("API Testcase group", () => {
 
 // testing of change event
 
-describe.only("Inout change event testing", () => {
+describe("Inout change event testing", () => {
   test("onchange event Testing", () => {
     render(<App />);
     let inputCheck = screen.getByRole("textbox");
     fireEvent.change(inputCheck, { target: { value: "a" } });
     expect(inputCheck.value).toBe("a");
+  });
+});
+
+// testing o click events
+
+describe.only("button click event testing", () => {
+  test("onClick eventTesting", () => {
+    render(<App />);
+    let buttonEvent = screen.getByRole("button");
+    fireEvent.click(buttonEvent);
+    expect(screen.getByText("Updated the data")).toBeInTheDocument();
   });
 });
